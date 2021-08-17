@@ -58,7 +58,6 @@ if(localStorage.getItem('drk-mode') === 'true'){
      
 } else {
      body.classList.remove('dark_mode_active');
-     body.classList.remove('<i class="fa fa-moon-o" aria-hidden="true"></i>');
 }
 
 
