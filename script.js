@@ -58,6 +58,7 @@ if(localStorage.getItem('drk-mode') === 'true' || dark_mode_status == true){
      
 } else {
      body.classList.remove('dark_mode_active');
+     dark_mode_status = true;
 }
 
 
