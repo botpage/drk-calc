@@ -43,7 +43,20 @@ dark_mode_btn.addEventListener('click', function(){
     this.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>';
      dark_mode_status = false;
   }
+// Save Local Storage
+  if(document.body.classList.contains('dark_mode_active')) {
+      localStorage.setItem('drk-mode', 'true');
+  } else {
+      localStorage.setItem('drk-mode', 'false');
+  }
 });
+
+/*Access Local Storage*/
+if(localStorage.getItem('drk-mode') === 'true'){
+     body.classList.add('dark_mode_active');
+} else {
+     body.classList.remove('dark_mode_active');
+}
 
 
 /*clear all number*/
