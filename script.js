@@ -54,7 +54,7 @@ dark_mode_btn.addEventListener('click', function(){
 /*Access Local Storage*/
 if(localStorage.getItem('drk-mode') === 'true' || dark_mode_status == true){
      body.classList.add('dark_mode_active');
-     dark_mode_status = true;
+     dark_mode_status = false;
      
 } else {
      body.classList.remove('dark_mode_active');
