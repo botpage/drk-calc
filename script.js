@@ -54,10 +54,13 @@ dark_mode_btn.addEventListener('click', function(){
 /*Access Local Storage*/
 if(localStorage.getItem('drk-mode') === 'true'){
      body.classList.add('dark_mode_active');
-     body.classList.add('<i class="fa fa-sun-o" aria-hidden="true"></i>');
+     this.innerHTML = '<i class="fa fa-sun-o" aria-hidden="true"></i>';
+     dark_mode_status = true;
      
 } else {
      body.classList.remove('dark_mode_active');
+     this.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>';
+     dark_mode_status = false;
 }
 
 
