@@ -45,9 +45,9 @@ body{
 	cursor: pointer;
 	font-size: 1.3em;
 	box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
-	inset -5px -5px 15px rgba(255,255,255,0.1),
-	5px 5px 15px rgba(0,0,0,0.3),
-	-5px -5px 15px rgba(255,255,255,0.1);
+				inset -5px -5px 15px rgba(255,255,255,0.1),
+					5px 5px 15px rgba(0,0,0,0.3),
+					-5px -5px 15px rgba(255,255,255,0.1);
 }
 .buttons button:hover{
 	background: rgba(0,0,0,0.2);
@@ -61,36 +61,59 @@ body{
 #clear{
 	background: #FF8A65;
 }
-
-
-/*dark mode*/
-.dark_mode_btn{
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 1.5em;
-	cursor: pointer;
-	background: none;
-	border: none;
-	outline: none;
-}
-.dark_mode_active{
-	background: #1c1c25;
-}
-.dark_mode_active button{
-	color: #ddd;
-}
-.dark_mode_active #clear, #equalTo{
-	color: #000;
-}
-.dark_mode_active #result{
-	color: #ddd;
-}
-.dark_mode_active #history{
-	color: #ddd;
-}
 #history{
 	position: absolute;
 	bottom: 5px;
 	right: 0;
+}
+
+/*dark mode*/
+#toggle{
+	position: relative;
+	display: block;
+	right: -85%;
+	cursor: pointer;
+	width: 60px;
+	height: 30px;
+	border-radius: 30px;
+	background: #ddd;
+	transition: ease 0.5s;
+	box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+				inset -5px -5px 15px rgba(255,255,255,0.1),
+					5px 5px 15px rgba(0,0,0,0.3),
+					-5px -5px 15px rgba(255,255,255,0.1);
+}
+#toggle.active{background: none;}
+#toggle .indicador{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	background: linear-gradient(to bottom, #444, #222);
+	border-radius: 50%;
+	transform: scale(0.9);
+	box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+		inset 0 4px 4px rgba(255, 255, 255, 0.2),
+		inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+	transition: 0.5s;
+}
+#toggle.active .indicador{
+	left: 30px;
+	background: #ddd;
+}
+body.toggle{
+	background: #1c1c25;
+}
+body.toggle button{
+	color: #ddd;
+}
+body.toggle #clear, #equalTo{
+	color: #000;
+}
+body.toggle #result{
+	color: #ddd;
+}
+body.toggle #history{
+	color: #ddd;
 }
