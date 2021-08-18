@@ -7,7 +7,7 @@ body{
 	min-height: 100vh;
 	display: grid;
 	place-items: center;
-	background: rgba(10,10,10,0.1);
+	background: #ddd;
 }
 .main{
 	position: relative;
