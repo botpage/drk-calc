@@ -1,7 +1,6 @@
 let body = document.querySelector('body');
 let result = document.querySelector('#result');
 
-let dark_mode_btn = document.querySelector('.dark_mode_btn');
 let clear = document.querySelector('#clear');
 let history = document.querySelector('#history');
 let equalTo = document.querySelector('#equalTo');
@@ -31,34 +30,28 @@ equalTo.addEventListener('click', function(){
   }
 });
 
+/*Mi Dark-Mode*/
+const btntgl = document.getElementById('toggle');
 
-/*dark_mode*/
-let dark_mode_status = false;
-dark_mode_btn.addEventListener('click', function(){
-  body.classList.toggle('dark_mode_active');
-  if (dark_mode_status == false) {
-    this.innerHTML = '<i class="fa fa-sun-o" aria-hidden="true"></i>';
-    dark_mode_status = true;
-  }else{
-    this.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>';
-     dark_mode_status = false;
-  }
-// Save Local Storage
-  if(document.body.classList.contains('dark_mode_active')) {
-      localStorage.setItem('drk-mode', 'true');
+btntgl.addEventListener('click', () => {
+  document.body.classList.toggle('toggle');
+  btntgl.classList.toggle('active');
+
+  // Save Local Storage
+  if(document.body.classList.contains('toggle')){
+    localStorage.setItem('drk-mode', 'true');
   } else {
-      localStorage.setItem('drk-mode', 'false');
+    localStorage.setItem('drk-mode', 'false');
   }
 });
 
-/*Access Local Storage*/
-if(localStorage.getItem('drk-mode') === 'true' || dark_mode_status == true){
-     body.classList.add('dark_mode_active');
-     dark_mode_status = false;
-     
+// Current Mode
+if(localStorage.getItem('drk-mode') === 'true'){
+  document.body.classList.add('toggle');
+  btntgl.classList.add('active');
 } else {
-     body.classList.remove('dark_mode_active');
-     dark_mode_status = true;
+  document.body.classList.remove('toggle');
+  btntgl.classList.remove('active');
 }
 
 
